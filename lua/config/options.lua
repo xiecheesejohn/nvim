@@ -7,6 +7,8 @@
 if vim.fn.has("win32") == 1 then
   -- Windows 系统
   vim.o.shell = "pwsh" -- 或者 "powershell"
+  vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command"
+  vim.opt.shellxquote = ""
 else
   -- Linux 或其他类 Unix 系统
   vim.o.shell = "bash"
