@@ -10,6 +10,9 @@ if vim.fn.has("win32") == 1 then
   vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command"
   vim.opt.shellxquote = ""
 else
-  -- Linux 或其他类 Unix 系统
+    -- Linux 或其他类 Unix 系统
   vim.o.shell = "bash"
 end
+-- 去除相对行号
+
+vim.o.relativenumber = false

@@ -29,4 +29,9 @@ function _G.run_file()
   end
 end
 
-vim.api.nvim_set_keymap("n", "<F5>", ":lua _G.run_file()<CR>", { noremap = true, silent = true })
+local map = LazyVim.safe_keymap_set
+map("n", "<leader>r", ":lua _G.run_file()<CR>", { desc = "simple run code", noremap = true, silent = true })
+map("n", "<C-S-Up>", "<cmd>resize +4<cr>", { desc = "Increase Window Height" })
+map("n", "<C-S-Down>", "<cmd>resize -4<cr>", { desc = "Decrease Window Height" })
+map("n", "<C-S-Left>", "<cmd>vertical resize +4<cr>", { desc = "Decrease Window Width" })
+map("n", "<C-S-Right>", "<cmd>vertical resize -4<cr>", { desc = "Increase Window Width" })
