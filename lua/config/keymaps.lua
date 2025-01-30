@@ -29,9 +29,13 @@ function _G.run_file()
   end
 end
 
+
 local map = LazyVim.safe_keymap_set
 map("n", "<leader>r", ":lua _G.run_file()<CR>", { desc = "simple run code", noremap = true, silent = true })
 map("n", "<C-S-Up>", "<cmd>resize +4<cr>", { desc = "Increase Window Height" })
 map("n", "<C-S-Down>", "<cmd>resize -4<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-S-Left>", "<cmd>vertical resize +4<cr>", { desc = "Decrease Window Width" })
 map("n", "<C-S-Right>", "<cmd>vertical resize -4<cr>", { desc = "Increase Window Width" })
+map("i", "jj", "<Esc>", { desc = "quit insert mode", noremap = true, silent = true })
+-- 绑定 gl 到诊断浮动窗口（普通模式）
+map("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Show diagnostic float window", noremap = true, silent = true })
