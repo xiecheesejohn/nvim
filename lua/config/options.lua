@@ -28,23 +28,23 @@ vim.g.neovide_remember_window_size = true
 vim.g.neovide_fullscreen = true
 
 -- 覆盖默认诊断配置
-vim.diagnostic.config({
-  -- 启用浮动窗口自动换行
-  float = {
-    wrap = true, -- 允许文本换行
-    max_width = 80, -- 浮动窗口最大宽度（超过则换行）
-    format = function(diagnostic)
-      return string.format(
-        "%s (%s: %s)",
-        diagnostic.message,
-        diagnostic.source,
-        diagnostic.code or diagnostic.user_data.lsp.code
-      )
-    end,
-  },
-  -- 虚拟文本换行（可选）
-  virtual_text = {
-    wrap = true, -- 虚拟文本换行显示
-    spacing = 4, -- 文本与代码间距
-  },
-})
+-- vim.diagnostic.config({
+--   -- 启用浮动窗口自动换行
+--   float = {
+--     wrap = true, -- 允许文本换行
+--     max_width = 80, -- 浮动窗口最大宽度（超过则换行）
+--     format = function(diagnostic)
+--       return string.format(
+--         "%s (%s: %s)",
+--         diagnostic.message,
+--         diagnostic.source,
+--         diagnostic.code or diagnostic.user_data.lsp.code
+--       )
+--     end,
+--   },
+--   -- 虚拟文本换行（可选）
+--   virtual_text = {
+--     wrap = true, -- 虚拟文本换行显示
+--     spacing = 4, -- 文本与代码间距
+--   },
+-- })
